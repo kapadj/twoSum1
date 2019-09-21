@@ -6,26 +6,22 @@ import java.util.Hashtable;
 public class TwoSum {
 
 	public static int[] returnPair(int[] nums, int target) {
+		int[] resultPair = new int[2];
+		HashSet<Integer> numTable = new HashSet<Integer>();
 		
-		int[] resultPair 			= new int[2];
-		HashSet<Integer> numTable 	= new HashSet<Integer>();
-		
-		if(nums.length<2)
-		{
+		if(nums.length<2){
 			System.out.println( "Need at least two numbers!");
 			return(null);
 		}	
 		
-		for(int count=0; count< nums.length; count++) 
+		for(int count = 0; count< nums.length; count++) 
 			numTable.add(nums[count]);
 		
-		for(int count=0; count< nums.length; count++)
-		{
-			int currentNum 	= nums[count];
+		for(int count = 0; count< nums.length; count++){
+			int currentNum = nums[count];
 			int requiredNum = target - currentNum;
 			
-			if(numTable.contains(requiredNum))
-			{
+			if(numTable.contains(requiredNum)){
 				resultPair[0] = currentNum;
 				resultPair[1] = requiredNum;
 				return(resultPair);
@@ -42,6 +38,4 @@ public class TwoSum {
 			for( int number: resultPair)
 				System.out.println(number);
 	}
-	
-	
 }
